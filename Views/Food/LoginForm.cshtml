@@ -1,0 +1,13 @@
+﻿@model MVCFoodDelivery.Models.ToLogin;
+
+<form method="post" asp-controller="Food" asp-action="LoginForm">
+    <div>
+        <label for="Email" class="form-label">Email address</label>
+        <input name="Email" type="email" class="form-control" id="exampleInputEmail1" placeholder="Email address">
+    </div>
+    <div>
+        <label for="Password" class="form-label">Password</label>
+        <input name="Password" type="password" class="form-control" formControlName="password" placeholder="Password">
+    </div><br />
+    <button class="btn btn-success">Login</button>
+</form>

@@ -1,0 +1,67 @@
+﻿@*@{
+    var toLogin = ViewData["toLogin"] as List<MVCFoodDelivery.Models.ToLogin>;
+}*@
+@*<h3>@ViewBag.title</h3>*@
+
+@*@{
+    var toLogin = ViewBag.ToLogin;
+}*@
+
+@model IEnumerable<MVCFoodDelivery.Models.ToLogin>
+
+<a class="btn btn-success" asp-controller="Food" asp-action="LoginForm">Add Details</a>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Id</th>
+            <th>Email</th>
+            <th>Password</th>
+            <th>Edit</th>
+            <th>Delete</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach(var detail in Model)
+        {
+            <tr>
+                <td>@detail.Id</td>
+                <td>@detail.Email</td>
+                <td>@detail.Password</td>
+                <td><a class="btn btn-success" asp-controller="Food" asp-action="EditLoginDetails" asp-route-id="@detail.Id"> Edit</a></td>
+                <td><a class="btn btn-danger" asp-controller="Food" asp-action="DeleteDetails" asp-route-id="@detail.Id">Delete</a></td>
+                
+            </tr>
+        }
+    </tbody>
+</table>
+
+@*<table class="table">
+    <thead>
+        <tr>
+            <th>Email</th>
+            <th>Password</th>
+        </tr>
+    </thead>
+    <tbody>
+       
+            <tr>
+                <td>@Model.Email</td>
+                <td>@Model.Password</td>
+            </tr>
+        
+    </tbody>
+</table>*@
+
+
+@*<div>
+    @{
+        Html.RenderPartial("address");
+    }
+</div>*@
+
+@*<h1>@TempData["Email"]</h1>
+
+<div>
+      @Html.Partial("address")
+</div>*@
